@@ -35,25 +35,25 @@ const changeTheme = () => {
         <div class="left-side">
           <div class="side-wrapper">
             <div class="side-menu">
-              <a href="#">
+              <a href="#" class="side-menu-selected">
                 <el-icon :size="20">
-                  <Orange />
-                </el-icon>Stock
+                  <Orange /> </el-icon
+                >Stock
               </a>
               <a href="#">
                 <el-icon :size="20">
-                  <Orange />
-                </el-icon>Stock
+                  <Orange /> </el-icon
+                >Stock
               </a>
               <a href="#">
                 <el-icon :size="20">
-                  <Orange />
-                </el-icon>Stock
+                  <Orange /> </el-icon
+                >Stock
               </a>
               <a href="#">
                 <el-icon :size="20">
-                  <Orange />
-                </el-icon>Stock
+                  <Orange /> </el-icon
+                >Stock
               </a>
             </div>
           </div>
@@ -179,13 +179,16 @@ const changeTheme = () => {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+    .side-menu-selected {
+      background-color: var(--hover-menu-bg);
+    }
     a {
       text-decoration: none;
       color: var(--theme-color);
       display: flex;
       align-items: center;
       font-weight: 400;
-      padding: 10px;
+      padding: 20px;
       font-size: 14px;
       border-radius: 6px;
       transition: 0.3s;
