@@ -22,7 +22,7 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      less: {
+      sass: {
         javascriptEnabled: true
       }
     }

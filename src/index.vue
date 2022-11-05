@@ -35,17 +35,26 @@ const changeTheme = () => {
         <div class="left-side">
           <div class="side-wrapper">
             <div class="side-menu">
-              <a href="#">Stock</a>
-              <a href="#">Tutorials</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Portfolio</a>
+              <a href="#">
+                <el-icon :size="20">
+                  <Orange />
+                </el-icon>Stock
+              </a>
+              <a href="#">
+                <el-icon :size="20">
+                  <Orange />
+                </el-icon>Stock
+              </a>
+              <a href="#">
+                <el-icon :size="20">
+                  <Orange />
+                </el-icon>Stock
+              </a>
+              <a href="#">
+                <el-icon :size="20">
+                  <Orange />
+                </el-icon>Stock
+              </a>
             </div>
           </div>
         </div>
@@ -54,83 +63,7 @@ const changeTheme = () => {
     </div>
   </div>
 </template>
-<style lang="less">
-* {
-  outline: none;
-  box-sizing: border-box;
-}
-
-:root {
-  --theme-bg-color: rgba(16 18 27 / 40%);
-  --border-color: rgba(113 119 144 / 25%);
-  --theme-color: #f9fafb;
-  --inactive-color: rgb(113 119 144 / 78%);
-  --body-font: "Poppins", sans-serif;
-  --hover-menu-bg: rgba(12 15 25 / 30%);
-  --content-title-color: #999ba5;
-  --content-bg: rgb(146 151 179 / 13%);
-  --button-inactive: rgb(249 250 251 / 55%);
-  --dropdown-bg: #21242d;
-  --dropdown-hover: rgb(42 46 60);
-  --popup-bg: rgb(22 25 37);
-  --search-bg: #14162b;
-  --overlay-bg: rgba(36, 39, 59, 0.3);
-  --scrollbar-bg: rgb(1 2 3 / 40%);
-}
-
-.light-mode {
-  --theme-bg-color: rgb(255 255 255 / 31%);
-  --theme-color: #3c3a3a;
-  --inactive-color: #333333;
-  --button-inactive: #3c3a3a;
-  --search-bg: rgb(255 255 255 / 31%);
-  --dropdown-bg: #f7f7f7;
-  --overlay-bg: rgb(255 255 255 / 30%);
-  --dropdown-hover: rgb(236 236 236);
-  --border-color: rgb(255 255 255 / 35%);
-  --popup-bg: rgb(255 255 255);
-  --hover-menu-bg: rgba(255 255 255 / 35%);
-  --scrollbar-bg: rgb(255 253 253 / 57%);
-  --content-title-color: --theme-color;
-}
-
-html {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
-body {
-  font-family: var(--body-font);
-  background-image: url(https://wallpapershome.com/images/wallpapers/macos-big-sur-1280x720-dark-wwdc-2020-22655.jpg);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 2em;
-  width: 100%;
-  height: 100vh;
-  @media screen and (max-width: 480px) {
-    padding: 0.8em;
-  }
-}
-
-img {
-  max-width: 100%;
-}
-
-.light-mode {
-  .content-section ul {
-    background-color: var(--theme-bg-color);
-  }
-  .pop-up__title {
-    border-color: var(--theme-color);
-  }
-  .dropdown.is-active ul {
-    background-color: rgb(255 255 255 / 94%);
-  }
-}
+<style lang="scss">
 #home {
   width: 100%;
   height: 100vh;
@@ -192,9 +125,11 @@ img {
         background-color: var(--dropdown-bg);
         box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
         padding: 8px;
-        border-radius: 50%;
+        border-radius: 100%;
         z-index: 3;
         cursor: pointer;
+        width: 40px;
+        height: 40px;
         svg {
           width: 24px;
           flex-shrink: 0;
@@ -265,15 +200,5 @@ img {
     flex-direction: column;
     flex-grow: 1;
   }
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-bg);
-  border-radius: 10px;
 }
 </style>
