@@ -1,4 +1,20 @@
 :root {
+  --theme-bg-color: rgb(255 255 255 / 31%);
+  --theme-color: #3c3a3a;
+  --inactive-color: #333333;
+  --button-inactive: #3c3a3a;
+  --search-bg: rgb(255 255 255 / 31%);
+  --dropdown-bg: #f7f7f7;
+  --overlay-bg: rgb(255 255 255 / 30%);
+  --dropdown-hover: rgb(236 236 236);
+  --border-color: rgb(255 255 255 / 35%);
+  --popup-bg: rgb(255 255 255);
+  --hover-menu-bg: rgba(255 255 255 / 35%);
+  --scrollbar-bg: rgb(255 253 253 / 57%);
+  --content-title-color: --theme-color;
+}
+
+.dark-mode {
   --theme-bg-color: rgba(16 18 27 / 40%);
   --border-color: rgba(113 119 144 / 25%);
   --theme-color: #f9fafb;
@@ -15,25 +31,12 @@
   --overlay-bg: rgba(36, 39, 59, 0.3);
   --scrollbar-bg: rgb(1 2 3 / 40%);
 }
-.light-mode {
-  --theme-bg-color: rgb(255 255 255 / 31%);
-  --theme-color: #3c3a3a;
-  --inactive-color: #333333;
-  --button-inactive: #3c3a3a;
-  --search-bg: rgb(255 255 255 / 31%);
-  --dropdown-bg: #f7f7f7;
-  --overlay-bg: rgb(255 255 255 / 30%);
-  --dropdown-hover: rgb(236 236 236);
-  --border-color: rgb(255 255 255 / 35%);
-  --popup-bg: rgb(255 255 255);
-  --hover-menu-bg: rgba(255 255 255 / 35%);
-  --scrollbar-bg: rgb(255 253 253 / 57%);
-  --content-title-color: --theme-color;
-}
+
 * {
   outline: none;
   box-sizing: border-box;
 }
+
 ::-webkit-scrollbar {
   width: 6px;
   border-radius: 10px;
@@ -62,47 +65,27 @@ body {
   padding: 2em;
   width: 100%;
   height: 100vh;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgb(255 255 255 / 45%) 100%);
+    backdrop-filter: saturate(3);
+  }
+
   @media screen and (max-width: 480px) {
     padding: 0.8em;
   }
 }
 
-body.light-mode:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.72) 0%,
-    rgb(255 255 255 / 45%) 100%
-  );
-  backdrop-filter: saturate(3);
-}
-
-img {
-  max-width: 100%;
-}
-
-.light-mode {
-  .dark-light .icon {
-    fill: transparent;
-    stroke: var(--theme-color);
-  }
-  .profile-img {
-    border: 2px solid var(--theme-bg-color);
-  }
-  .content-section ul {
-    background-color: var(--theme-bg-color);
-  }
-  .pop-up__title {
-    border-color: var(--theme-color);
-  }
-  .dropdown.is-active ul {
-    background-color: rgb(255 255 255 / 94%);
-  }
+body.dark-mode:before {
+  display: none;
 }
 
 #app {

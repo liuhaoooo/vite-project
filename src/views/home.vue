@@ -1,12 +1,13 @@
 <script setup>
 import { reactive, computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter();
+const route = useRoute();
 const state = reactive({
   menuList: [
     { label: "首页", icon: "Help", route: "menu_1" },
-    { label: "查看", icon: "Delete", route: "menu_2" },
+    { label: "查看", icon: "Postcard", route: "menu_2" },
     { label: "设置", icon: "Orange", route: "menu_3" },
   ],
   tabList: [
@@ -15,8 +16,9 @@ const state = reactive({
     { label: "端口过滤", route: "portFiltering" },
   ]
 })
+state.routeName = computed(() => route.name)
 const changeTheme = () => {
-  document.body.classList.toggle("light-mode");
+  document.body.classList.toggle("dark-mode");
 };
 const tabChange = (e) => {
   router.push({ name: e.route})
@@ -30,11 +32,6 @@ const menuChange = (e) => {
     <div class="app">
       <div class="header">
         <div class="menu-circle"></div>
-        <div class="header-menu">
-          <a @click="tabChange(item)" href="javascript:void(0);" class="menu-link" v-for="item in state.tabList" :key="item.route" :class="{'is-active':item.route==router.currentRoute.value.name}">
-            {{item.label}}
-          </a>
-        </div>
         <div class="header-profile">
           <div class="dark-light" @click="changeTheme">
             <svg
@@ -61,7 +58,14 @@ const menuChange = (e) => {
           </div>
         </div>
         <div class="main-container">
-            <router-view></router-view>
+            <div class="main-menu">
+                <a @click="tabChange(item)" href="javascript:void(0);" class="menu-link" v-for="item in state.tabList" :key="item.route" :class="{'is-active':item.route==state.routeName}">
+                    {{item.label}}
+                </a>
+            </div>
+            <div class="main-body">
+              <router-view></router-view>
+            </div>
         </div>
       </div>
     </div>
@@ -102,22 +106,6 @@ const menuChange = (e) => {
     white-space: nowrap;
     @media screen and (max-width: 480px) {
       padding: 0 16px;
-    }
-    &-menu {
-      display: flex;
-      align-items: center;
-      a {
-        padding: 20px 30px;
-        text-decoration: none;
-        color: var(--inactive-color);
-        border-bottom: 2px solid transparent;
-        transition: 0.3s;
-        &.is-active,
-        &:hover {
-          color: var(--theme-color);
-          border-bottom: 2px solid var(--theme-color);
-        }
-      }
     }
     .header-profile {
       display: flex;
@@ -209,6 +197,25 @@ const menuChange = (e) => {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    .main-menu {
+      display: flex;
+      align-items: center;
+      a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: var(--inactive-color);
+        border-bottom: 2px solid transparent;
+        transition: 0.3s;
+        &.is-active,
+        &:hover {
+          color: var(--theme-color);
+          border-bottom: 2px solid var(--theme-color);
+        }
+      }
+    }
+    .main-body{
+      padding: 10px;
+    }
   }
 }
 </style>
