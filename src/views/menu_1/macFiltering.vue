@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <router-view></router-view>
+  <h1>MAC</h1>
 </template>

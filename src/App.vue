@@ -1,10 +1,9 @@
 <script setup>
-import Index from '@/index.vue'
 import { ElConfigProvider } from 'element-plus'
 </script>
 
 <template>
   <el-config-provider>
-    <Index />
+    <router-view></router-view>
   </el-config-provider>
 </template>

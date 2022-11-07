@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <router-view></router-view>
+  <h1>PORT</h1>
 </template>
