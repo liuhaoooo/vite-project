@@ -1,9 +1,5 @@
-html.dark {
-  --el-bg-color: #52525479;
-  --el-bg-color-overlay: #52525479;
-}
 :root {
-  --theme-bg-color: rgb(255 255 255 / 31%);
+  --theme-bg-color: rgb(255 255 255 / 50%);
   --theme-color: #3c3a3a;
   --inactive-color: #333333;
   --button-inactive: #3c3a3a;
@@ -16,10 +12,13 @@ html.dark {
   --hover-menu-bg: rgba(255 255 255 / 35%);
   --scrollbar-bg: rgb(255 253 253 / 57%);
   --content-title-color: --theme-color;
+  // elementui变量覆盖
+  --el-bg-color: #ffffff5e;
+  --el-fill-color-blank: transparent;
 }
 
 .dark {
-  --theme-bg-color: rgba(16 18 27 / 40%);
+  --theme-bg-color: rgba(16 18 27 / 45%);
   --border-color: rgba(113 119 144 / 25%);
   --theme-color: #f9fafb;
   --inactive-color: rgb(113 119 144 / 78%);
@@ -34,6 +33,13 @@ html.dark {
   --search-bg: #14162b;
   --overlay-bg: rgba(36, 39, 59, 0.3);
   --scrollbar-bg: rgb(1 2 3 / 40%);
+}
+
+html.dark {
+  --el-bg-color: #52525479;
+  --el-bg-color-overlay: #52525479;
+  --el-color-primary: #0758aa;
+  --el-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -98,4 +104,12 @@ html.dark:before {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+.tabe-footer{
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

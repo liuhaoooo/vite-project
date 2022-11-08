@@ -5,7 +5,10 @@
       <el-table-column prop="name" label="Name" width="180" />
       <el-table-column prop="address" label="Address" />
     </el-table>
-    <el-button type="primary">Primary</el-button>
+    <div class="tabe-footer">
+      <el-button type="primary">添加</el-button>
+      <el-button type="primary">生成</el-button>
+    </div>
   </el-card>
 </template>
 
