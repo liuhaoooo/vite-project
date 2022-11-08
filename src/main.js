@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
-import '@/style.scss'
 import App from '@/App.vue'
 import store from '@/store'
 import router from '@/router'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import 'element-plus/theme-chalk/dark/css-vars.css'
+import '@/assets/styles/style.scss'
 
 const app = createApp(App)
 

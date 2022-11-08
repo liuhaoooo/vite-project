@@ -23,7 +23,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       sass: {
-        javascriptEnabled: true
+        javascriptEnabled: true,
+        additionalData: `@use "@/assets/styles/element/index.scss" as *;`,
       }
     }
   }

@@ -1,6 +1,14 @@
 <script setup>
 import { reactive, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useToggle } from '@vueuse/shared'
+import { useDark } from "@vueuse/core";
+const isDark = useDark({
+  storageKey: 'useDarkKEY',
+  valueDark: 'dark',
+  valueLight: 'light',
+})
+const toggle = useToggle(isDark);
 
 const router = useRouter();
 const route = useRoute();
@@ -14,12 +22,10 @@ const state = reactive({
     { label: "IP过滤", route: "ipFiltering" },
     { label: "MAC过滤", route: "macFiltering" },
     { label: "端口过滤", route: "portFiltering" },
-  ]
+  ],
+  themeValue: false
 })
 state.routeName = computed(() => route.name)
-const changeTheme = () => {
-  document.body.classList.toggle("dark-mode");
-};
 const tabChange = (e) => {
   router.push({ name: e.route})
 };
@@ -33,18 +39,13 @@ const menuChange = (e) => {
       <div class="header">
         <div class="menu-circle"></div>
         <div class="header-profile">
-          <div class="dark-light" @click="changeTheme">
-            <svg
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-            </svg>
-          </div>
+          <el-switch
+            v-model="state.themeValue"
+            @change="toggle"
+            inline-prompt
+            active-text="Dark"
+            inactive-text="Light"
+          />
         </div>
       </div>
       <div class="wrapper">
@@ -113,23 +114,6 @@ const menuChange = (e) => {
       padding: 0 16px 0 40px;
       margin-left: auto;
       flex-shrink: 0;
-      .dark-light {
-        background-color: var(--dropdown-bg);
-        box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
-        padding: 8px;
-        border-radius: 100%;
-        z-index: 3;
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        svg {
-          width: 24px;
-          flex-shrink: 0;
-          fill: #ffce45;
-          stroke: #ffce45;
-          transition: 0.5s;
-        }
-      }
     }
   }
 
