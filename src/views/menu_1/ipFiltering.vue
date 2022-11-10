@@ -7,7 +7,7 @@
     </el-table>
     <div class="tabe-footer">
       <el-button type="primary">添加</el-button>
-      <el-button type="primary">生成</el-button>
+      <el-button type="primary" @click="createJson">生成JSON</el-button>
     </div>
   </el-card>
 </template>
@@ -35,4 +35,7 @@ const tableData = [
     address: 'No. 189, Grove St, Los Angeles',
   },
 ]
+const createJson = () => {
+  
+}
 </script>
