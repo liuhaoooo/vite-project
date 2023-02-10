@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3366312 */
+  src: url('iconfont.woff2?t=1658299442339') format('woff2'),
+       url('iconfont.woff?t=1658299442339') format('woff'),
+       url('iconfont.ttf?t=1658299442339') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yanjing_yincang:before {
+  content: "\eb45";
+}
+
+.icon-yanjing_xianshi:before {
+  content: "\eb46";
+}
+
+.icon-kongzhi:before {
+  content: "\e631";
+}
+
+.icon-yonghu:before {
+  content: "\e60a";
+}
+
+.icon-info:before {
+  content: "\e6e5";
+}
+
+.icon-tag:before {
+  content: "\e605";
+}
+
+.icon-gongyeshezhi:before {
+  content: "\e629";
+}
+
+.icon-home:before {
+  content: "\e751";
+}
+
+.icon-system:before {
+  content: "\e62a";
+}
+
+.icon-sms:before {
+  content: "\e772";
+}
+
+.icon-wifi:before {
+  content: "\e6a4";
+}
+
+.icon-security:before {
+  content: "\e667";
+}
+
+.icon-device:before {
+  content: "\e695";
+}
+
+.icon-network:before {
+  content: "\e625";
+}
+
+.icon-luyin:before {
+  content: "\e600";
+}
+
+.icon-ai36:before {
+  content: "\e699";
+}
+
+.icon-signal4:before {
+  content: "\e671";
+}
+

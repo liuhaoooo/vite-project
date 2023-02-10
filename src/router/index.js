@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Index from '@/index.vue'
 import Home from '@/views/home.vue'
+import Login from '@/views/login.vue'
 
 const routes = [
     {
@@ -10,44 +11,21 @@ const routes = [
         component: Index,
         children: [
             {
+                path: '/login',
+                name: 'login',
+                component: Login,
+            },
+            {
                 path: '/home',
                 name: 'home',
-                redirect: "/home/menu_1",
+                redirect: "/home/network_status",
                 component: Home,
                 children: [
                     {
-                        path: 'menu_1',
-                        name: 'menu_1',
-                        component: () => import('@/views/menu_1/index.vue'),
-                        redirect: "/home/menu_1/ipFiltering",
-                        children: [
-                            {
-                                path: 'ipFiltering',
-                                name: 'ipFiltering',
-                                component: () => import('@/views/menu_1/ipFiltering.vue'),
-                            },
-                            {
-                                path: 'macFiltering',
-                                name: 'macFiltering',
-                                component: () => import('@/views/menu_1/macFiltering.vue'),
-                            },
-                            {
-                                path: 'portFiltering',
-                                name: 'portFiltering',
-                                component: () => import('@/views/menu_1/portFiltering.vue'),
-                            },
-                        ]
-                    },
-                    {
-                        path: 'menu_2',
-                        name: 'menu_2',
-                        component: () => import('@/views/menu_1/index.vue'),
-                    },
-                    {
-                        path: 'menu_3',
-                        name: 'menu_3',
-                        component: () => import('@/views/menu_1/index.vue'),
-                    },
+                        path: 'network_status',
+                        name: 'network_status',
+                        component: () => import('@/views/status/network_status.vue'),
+                    }
                 ],
             }
         ]
