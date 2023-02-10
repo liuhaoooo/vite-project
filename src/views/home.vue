@@ -14,7 +14,7 @@ import Head from "@/components/head.vue"
 <style lang="scss">
 #home {
   margin: 0;
-  background-image: url(../assets/images/background/home_bg.png);
+  background: url(../assets/images/background/home_bg.png) no-repeat;
   background-size: cover;
   background-position: center;
   @include my-flex(flex-start);
@@ -28,7 +28,10 @@ import Head from "@/components/head.vue"
   >.home-content{
     width: 100%;
     height: 100%;
-    padding: 1.5em;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
   }
 }
 </style>

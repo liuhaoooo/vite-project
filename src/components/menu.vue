@@ -55,6 +55,22 @@ const state = reactive({
           <li><a>Suspendisse fringilla</a></li>
         </ul>
       </li>
+      <li>
+        <a>系统设置</a>
+        <ul>
+          <li><a>Lorem ipsum dolor</a></li>
+          <li><a>Maecenas dignissim fermentum luctus</a></li>
+          <li><a>Suspendisse fringilla</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>系统设置</a>
+        <ul>
+          <li><a>Lorem ipsum dolor</a></li>
+          <li><a>Maecenas dignissim fermentum luctus</a></li>
+          <li><a>Suspendisse fringilla</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
