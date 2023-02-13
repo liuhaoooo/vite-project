@@ -28,7 +28,7 @@ import content_image_src from '@/assets/images/background/content_image.png'
 </template>
 <style lang="scss">
   #network_status{
-    height: calc(100vh - 146px);
+    height: calc(100vh - 158px);
     width: 100%;
     @include my-flex(space-between);
     >.network_status-item{

@@ -5,7 +5,7 @@ import Head from "@/components/head.vue"
 <template>
   <div id="home">
     <Head/>
-    <div class="home-content">
+    <div class="home-body">
       <Menu/>
       <router-view></router-view>
     </div>
@@ -25,7 +25,7 @@ import Head from "@/components/head.vue"
   @media screen and (max-width: 480px) {
     padding: 0.8em;
   }
-  >.home-content{
+  >.home-body{
     width: 100%;
     height: 100%;
     padding-top: 20px;
