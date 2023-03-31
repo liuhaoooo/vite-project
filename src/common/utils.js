@@ -15,8 +15,8 @@ const u_parseHexPageHide = hex => {
 export const u_pageHide = (index, inverter = false) => {
     if (index === false) return inverter;
     if (index === undefined || index === true) return !inverter;
-    let CONFIG = store.getters['sysStatus/CONFIG']
-    if (store.getters['sysStatus/CONFIG'].$isNull) {
+    let CONFIG = {}
+    if (CONFIG.$isNull) {
         CONFIG = sessionStorage["CONFIG"] ? JSON.parse(sessionStorage["CONFIG"]) : {}
     }
     let arr = u_parseHexPageHide(CONFIG.web_page_hide).split("").reverse()
@@ -39,14 +39,14 @@ export const u_pageHide = (index, inverter = false) => {
     }
 }
 // 传入value值找出option中对应的label
-export const getOptionLabel = (value, options, valueName = 'value', labelName = 'name') => {
+export const u_getOptionLabel = (value, options, valueName = 'value', labelName = 'name') => {
     if(!value || !options) return "-"
     const res = options.filter(item=>item[valueName]===value)[0]
     if(!res) return "-"
     return res[labelName] || "-"
 }
 //格式化MAC
-export const formatMAC = (mac)=> {
+export const u_formatMAC = (mac)=> {
     if(!mac) return mac;
     return mac.match(/[0-9a-f]{2}/ig).join(":").toUpperCase();
 }
