@@ -24,7 +24,7 @@ const routes = [
                     {
                         path: 'network_status',
                         name: 'network_status',
-                        component: () => import('@/views/status/network_status.vue'),
+                        component: () => import('@/views/systemStatus/network_status.vue'),
                     }
                 ],
             }
