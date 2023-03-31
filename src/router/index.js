@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Index from '@/index.vue'
 import Home from '@/views/home.vue'
 import Login from '@/views/login.vue'
+import { homeRouter } from "./modules";
+import routerController from './routerController.js'
 
 const routes = [
     {
@@ -20,14 +22,23 @@ const routes = [
                 name: 'home',
                 redirect: "/home/network_status",
                 component: Home,
-                children: [
-                    {
-                        path: 'network_status',
-                        name: 'network_status',
-                        component: () => import('@/views/systemStatus/network_status.vue'),
-                    }
-                ],
-            }
+                children: homeRouter
+            },
+            {
+                path: '/step',
+                name: 'step',
+                component: () => import('@/views/step/index.vue')
+            },
+            {
+                path: '/simlock',
+                name: 'simlock',
+                component: () => import('@/views/step/simlock.vue')
+            },
+            {
+                path: '/plmnlock',
+                name: 'plmnlock',
+                component: () => import('@/views/step/plmnlock.vue')
+            },
         ]
     }
 ]

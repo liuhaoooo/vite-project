@@ -28,5 +28,7 @@ const handleSelect = (key, keyPath) => {
 .el-sub-menu {
   background: #fff !important;
   margin-right: 20px !important;
+  height: 45px;
+  border-radius: 6px;
 }
 </style>
